@@ -1,9 +1,11 @@
 import React from 'react'
 
-const TodoList = () => {
+const TodoList = ({ todos }) => {
     return (
         <div>
-            Todolist
+            {todos.map(todo => (
+                <div>{todo.text}</div>
+            ))}
         </div>
     )
 }
