@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Header from './Components/Header';
 import TodoList from './Components/TodoList';
+import { PlusOutlined } from '@ant-design/icons';
 
 function App() {
   const [todos, setTodos] = useState([]);
@@ -32,17 +33,22 @@ function App() {
   };
 
   return (
-    <div className=" w-screen h-screen overflow-y-auto">
+    <div className=" w-screen h-screen overflow-y-auto bg-gradient-to-br from-[#0C3548] to-[#030214]">
       <div className=' text-center'>
         <Header />
 
-        <input
-          type="text"
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          placeholder="Add a new task"
-        />
-        <button onClick={addTodo}>Add Task</button>
+        <div className='w-1/2 max-w-[800px] mx-auto flex p-4 bg-gradient-to-br from-[#F58527] to-[#CA3927] rounded-xl'>
+
+          <input
+            type="text"
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            placeholder="Add a new task"
+            className='bg-transparent focus:outline-none focus:border-transparent flex-1 text-white text-[20px] font-medium'
+
+          />
+          <button onClick={addTodo} className=''><PlusOutlined className='text-white' /></button>
+        </div>
         <TodoList todos={todos} deleteTodo={deleteTodo} toggleComplete={toggleComplete} editTodo={editTodo} />
       </div>
     </div>

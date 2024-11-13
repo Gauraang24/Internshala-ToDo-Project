@@ -3,7 +3,7 @@ import TodoItem from './TodoItem'
 
 const TodoList = ({ todos, deleteTodo, toggleComplete, editTodo }) => {
     return (
-        <div>
+        <div className='w-1/2 max-w-[800px] mx-auto my-6'>
             {todos.map(todo => (
                 <TodoItem
                     key={todo.id}
